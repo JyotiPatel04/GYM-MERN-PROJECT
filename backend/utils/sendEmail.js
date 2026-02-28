@@ -8,8 +8,11 @@ export const sendEmail = async (options) => {
     secure: false, // 587 port ke liye hamesha false rahega
     auth: {
       user: "jyotipatel10304@gmail.com", 
-      pass: "toonvplzpkaczqgt", 
+      pass: "negnnjlsairbepjt", 
     },
+    tls: {
+    rejectUnauthorized: false // Ye line add kar dein, isse connection fail nahi hoga
+  }
   });
 
   const mailOptions = {
