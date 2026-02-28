@@ -1,20 +1,19 @@
 import nodemailer from "nodemailer";
 
 export const sendEmail = async (options) => {
+  // Humne variables ki jagah direct values daal di hain taaki Render koi galti na kare
   const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: process.env.SMTP_PORT,
-   
-  service: process.env.SMTP_SERVICE,
-  auth: {
-    user: process.env.SMTP_MAIL,
-    pass: process.env.SMTP_PASSWORD,
-  },
-  secure: process.env.SMTP_PORT === "465" ? true : false,
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // 587 port ke liye hamesha false rahega
+    auth: {
+      user: "jyotipatel10304@gmail.com", 
+      pass: "toonvplzpkaczqgt", 
+    },
   });
 
   const mailOptions = {
-    from: process.env.SMTP_MAIL,
+    from: "jyotipatel10304@gmail.com",
     to: options.email,
     subject: options.subject,
     text: `${options.message} \n\nEmail of User Who Sent The Message: ${options.userEmail}`,
