@@ -8,7 +8,7 @@ export const sendEmail = async (options) => {
     pool: true, // Connection ko zinda rakhne ke liye
     auth: {
       user: "jyotipatel10304@gmail.com",
-      pass: "negnnjlsairbepjt", // Apna latest 16-digit App Password hi rakhein
+      pass: "ijemcbdgxriwctfb", // Apna latest 16-digit App Password hi rakhein
     },
     tls: {
       rejectUnauthorized: false, // Security check bypass karne ke liye
