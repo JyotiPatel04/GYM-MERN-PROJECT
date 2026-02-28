@@ -13,18 +13,14 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const { data } = await axios.post(
-        "https://gym-mern-project-mkvu.onrender.com",
-        {
-          name,
-          email,
-          message,
-        },
-        {
-          withCredentials: true,
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+     const { data } = await axios.post(
+  "https://gym-mern-project-mkvu.onrender.com/send/mail", 
+  { name, email, message },
+  {
+    withCredentials: true,
+    headers: { "Content-Type": "application/json" },
+  }
+);
       setName("");
       setEmail("");
       setMessage("");
