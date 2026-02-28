@@ -9,7 +9,7 @@ config({ path: "./config.env" });
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [process.env.FRONTEND_URL], // Localhost hata kar ye likhein
     methods: ["GET", "POST"],
     credentials: true,
   })
@@ -30,7 +30,7 @@ app.post("/send/mail", async (req, res) => {
 
   try {
     await sendEmail({
-      email: "sachinsachin22446@gmail.com",
+      email: process.env.SMTP_MAIL,
       subject: "GYM WEBSITE CONTACT",
       message,
       userEmail: email,
