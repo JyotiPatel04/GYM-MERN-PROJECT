@@ -1,15 +1,17 @@
-
 import nodemailer from "nodemailer";
 
 export const sendEmail = async (options) => {
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true, 
+    port: 587,
+    secure: false, // 587 ke liye false hona chahiye
     auth: {
-      user: "jyotipatel10304@gmail.com", 
-      pass: "ijemcbdgxriwctfb", // Jo naya password aapne screenshot me dikhaya tha
+      user: "jyotipatel10304@gmail.com",
+      pass: "ijemcbdgxriwctfb", 
     },
+    tls: {
+      rejectUnauthorized: false // Security handshake error se bachane ke liye
+    }
   });
 
   const mailOptions = {
