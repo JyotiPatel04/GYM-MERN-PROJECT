@@ -21,3 +21,5 @@ export const sendEmail = async (options) => {
 
   await transporter.sendMail(mailOptions);
 };
+console.log("SMTP_MAIL:", process.env.SMTP_MAIL);
+console.log("SMTP_PASS exists:", !!process.env.SMTP_PASSWORD);
